@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+         {{pageTitle}}
+    </div>
+    <div class="card-body">
+
+           <div class="row">             
+               <div class="table-responsive">
+                      <table class="table">
+                            <thead>
+                                <tr>
+                                 <th>Customer Name</th>
+                                 <th>Customer Mobile Number</th>
+                                 <th>Customer Email</th>
+                                 <th>CustomerPincode</th>
+                                 <th>Customer Address</th>
+                                </tr>       
+                            </thead>
+                            <tbody>
+                                  <tr *ngFor='let customer of customer'>
+                                        
+                                         <td>
+                                            <a [routerLink]="['/viewcustomer',customer.CustomerId]"> 
+                                            {{customer.CustomerName }}</a></td>
+                                         <td>{{customer.CustomerNum}}</td>
+                                         <td>{{customer.CustomerEmail}}</td>
+                                         <td>{{customer.CustomerPinCode}}</td>
+                                         <td>{{customer.CustomerAddress}}</td>
+                                  </tr>
+                            </tbody>
+                      </table>
+               </div>
+           </div>
+    </div>
+</div>
